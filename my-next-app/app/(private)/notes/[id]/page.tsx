@@ -1,7 +1,15 @@
+import type { Metadata } from "next"
+
 import { getNote } from "@/lib/api"
 import {QueryClient, HydrationBoundary, dehydrate} from "@tanstack/react-query"
 
 import NoteDetailsPage from "./NoteDetailsPage.client"
+
+export const generateMetadate = async() : Promise <Metadata> => {
+    return {
+        title: "",
+    }
+}
 
 interface NoteProps {
     params: Promise<{ id: string }>
